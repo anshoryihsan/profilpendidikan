@@ -4,14 +4,14 @@ class Profil extends CI_Controller {
 	{
 		parent::__construct();
 		//Panggil Model
-		$this->load->model('masterdata/mprofil');
+		$this->load->model('masterdata/Mprofil');
 	}
 	public function profilsekolah(){
 		//ambil idnss dari data sd
 		$dnss = $_GET['idnss'];
 		$where = array('nss' => $dnss );
 		
-		$data ['isi'] = $this->mprofil->profil($dnss);
+		$data ['isi'] = $this->Mprofil->profil($dnss);
 		$this->load->view('masterdata/header',$data);
 		$this->load->view('masterdata/Vprofil',$data);
 		$this->load->view('masterdata/footer',$data);

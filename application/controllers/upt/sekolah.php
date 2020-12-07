@@ -8,7 +8,7 @@
     function __construct()
     {
       parent::__construct();
-     $this->load->model('upt/msekolah');
+     $this->load->model('upt/Msekolah');
     }
 
     public function detailsekolah(){
@@ -16,7 +16,7 @@
       $dnss = $_GET['idnss'];
       $where = array('nss' => $dnss );
 
-      $data ['isi'] = $this->mhome->datasd($dnss);
+      $data ['isi'] = $this->Mhome->datasd($dnss);
       $this->load->view('upt/detailpesertadidik',$data);
 
     }

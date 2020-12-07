@@ -4,13 +4,13 @@ class Profil extends CI_Controller {
 	{
 		parent::__construct();
 		//Panggil Model
-		$this->load->model('upt/mprofil');
+		$this->load->model('upt/Mprofil');
 	}
 
 	public function profilsekolah(){
 		//ambil idnss dari data sd
 		$dnss = $_GET['idnss'];
-		$data ['isi'] = $this->mprofil->profil($dnss);
+		$data ['isi'] = $this->Mprofil->profil($dnss);
 		$this->load->view('upt/header');
 		$this->load->view('upt/Vprofil',$data);
 		$this->load->view('upt/footer');
